@@ -43,7 +43,7 @@ const SplashScreen = () => {
 
       //   checkAuthStatus();
       // }
-      navigation.replace(ScreenNames.Tutorial);
+      navigation.replace(ScreenNames.Signin);
     }, 2000);
     
   }, []);

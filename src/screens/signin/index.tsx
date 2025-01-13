@@ -200,12 +200,12 @@ const Signin = () => {
         if (!data) {
             throw 'Something went wrong obtaining access token';
         }
-
+    
        
-        const facebookCredential = FacebookAuthProvider.credential(data.accessToken);
+        const facebookCredential = getAuth.FacebookAuthProvider.credential(data.accessToken);
         
-        const userCredential = await signInWithCredential(getAuth(), facebookCredential);
-
+        await getAuth().signInWithCredential(facebookCredential);
+        console.log('User logged in successfully');
         
     } catch (err) {
         console.log("error", err)

@@ -21,8 +21,10 @@ import {colors} from '../../theme';
 import {Calendar} from 'react-native-calendars';
 import moment from 'moment';
 import Button from '../../components/Button';
+
 import {showToast} from '../../components/CustomToast';
 import CustomModal from '../../components/CustomModal';
+import CustomCalendar from '../../components/CustomCalendar';
 type SignupScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
   ScreenNames.Signup
@@ -342,25 +344,16 @@ const Signup = () => {
 
        
         <CustomModal modalVisible={modalVisible} setModalVisible={setModalVisible}>
-        <View style={styles.calendarContainer}>
-          <Calendar
-            current={date}
-            onDayPress={(day) => {
-              if (day?.dateString) {
-                setBirthday(moment(day).format('DD, MMM YYYY'));
-                setbirthError(false);
-                setModalVisible(false);
-              } else {
-                console.warn('Invalid date object received:', day);
-              }
-            }}
-            markedDates={{
-              [birthday]: { selected: true, selectedColor:colors.main },
-            }}
-            markingType={'simple'}
-          />
-        </View>
+        <CustomCalendar
+          visible={modalVisible}
+          selectedDate={birthday}
+          onDateSelect={(date) => {setBirthday(date)
+            setbirthError(false)
+          }}
+          onClose={() => setModalVisible(false)}
+        />
       </CustomModal>
+     
       </ScrollView>
     </SafeAreaView>
   );
