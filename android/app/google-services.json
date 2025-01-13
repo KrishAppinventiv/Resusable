@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "685017526822",
+    "project_id": "resuable-784cc",
+    "storage_bucket": "resuable-784cc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685017526822:android:8ba7ca50e775f1415eace7",
+        "android_client_info": {
+          "package_name": "com.resusable"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "685017526822-5524lnsugdka52oqtanh0omugd2pfp1f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.resusable",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "685017526822-5h5iqtqva8c5det4lb088vt74ac6v2ub.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJGONSlSSybeu8Ulj6xUA7sXUuc7utZos"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "685017526822-5h5iqtqva8c5det4lb088vt74ac6v2ub.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

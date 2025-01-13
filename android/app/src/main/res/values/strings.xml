@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Resusable</string>
+
+    <string name="facebook_app_id">1255266628880247</string>
+<string name="facebook_client_token">281b1ab20ecf3a053bba56e280b80ecc</string>
 </resources>

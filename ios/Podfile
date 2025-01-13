@@ -1,4 +1,3 @@
-# Resolve react_native_pods.rb with node to allow for hoisting
 require Pod::Executable.execute_command('node', ['-p',
   'require.resolve(
     "react-native/scripts/react_native_pods.rb",
@@ -16,6 +15,12 @@ end
 
 target 'Resusable' do
   config = use_native_modules!
+
+  # Include Firebase/Auth and GoogleSignIn
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
+  pod 'RNGoogleSignin', :path => '../node_modules/@react-native-google-signin/google-signin'
+
 
   use_react_native!(
     :path => config[:reactNativePath],
@@ -36,5 +41,11 @@ target 'Resusable' do
       :mac_catalyst_enabled => false,
       # :ccache_enabled => true
     )
+
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
+      end
+    end
   end
 end
